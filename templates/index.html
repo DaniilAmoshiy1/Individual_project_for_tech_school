@@ -1,40 +1,21 @@
 <!-- Шаблон главной страницы index.html -->
 <!DOCTYPE html>
-    <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <title>Список пользователей</title>
-        <link rel="stylesheet" href="static/styles.css">
-    </head>
-    <body>
-
-        <div class="container">
-            <h1>Пользователи из базы данных</h1>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Имя</th>
-                        <th>Возраст</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Динамический цикл Jinja2 по списку пользователей из FastAPI -->
-                    {% for user in users %}
-                        <tr>
-                            <td>{{ user.id }}</td>
-                            <td>{{ user.name }}</td>
-                            <td>{{ user.age }}</td>
-                        </tr>
-                    {% else %}
-                        <tr>
-                            <td colspan="3">База данных пуста или данные не загрузились</td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-
-        </div>
-    </body>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список пользователей</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Пользователи из базы данных</h1>
+    <table border="1">
+        <tr><th>ID</th><th>Имя</th><th>Возраст</th></tr>
+        <!-- Динамический цикл Jinja2 по списку пользователей из FastAPI -->
+        {% for user in users %}
+        <tr><td>{{ user.id }}</td><td>{{ user.name }}</td><td>{{ user.age }}</td></tr>
+        {% else %}
+        <tr><td colspan="3">База данных пуста или данные не загрузились</td></tr>
+        {% endfor %}
+    </table>
+</body>
 </html>
