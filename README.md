@@ -28,8 +28,7 @@
 
 ### 1. Клонирование репозитория
 ```bash
-git clone https://github.com
-cd название-репозитория
+git clone https://github.com/DaniilAmoshiy1/Individual_project_for_tech_school.git
 ```
 
 ### 2. Создание и активация виртуального окружения
