@@ -1,12 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>
-            Demonstration table
-        </title>
-    </head>
-    <body>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список пользователей</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
 
-    </body>
+    <!-- Добавили контейнер для выравнивания всего содержимого -->
+    <div class="container">
+        <h1>Пользователи из базы данных</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Имя</th>
+                    <th>Возраст</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.age }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="3">База данных пуста или данные не загрузились</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</body>
 </html>
