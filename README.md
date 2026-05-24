@@ -34,14 +34,11 @@ cd название-репозитория
 
 ### 2. Создание и активация виртуального окружения
 ```bash
-# Создание виртуального окружения venv
 python -m venv venv
-
-# Активация для Windows (cmd / PowerShell):
+```
+## Активация для Windows (cmd / PowerShell):
+```bash
 venv\Scripts\activate
-
-# Активация для Linux / macOS:
-source venv/bin/activate
 ```
 
 ### 3. Установка зависимостей (при наличии)
@@ -54,6 +51,8 @@ pip install -r requirements.txt
 fastapi dev main.py
 ```
 
+### 5. Ссылка на страницу:
+### http://127.0.0.1:8000
 
 ---
 
