@@ -12,9 +12,6 @@ class User(SqlAlchemyBase):
     name: Mapped[str] = mapped_column(String(50), unique=True)
     age: Mapped[int] = mapped_column(Integer)
 
-# Произошла проблема из за которой пришлось сделать создание здесь
-SqlAlchemyBase.metadata.create_all(DemoSession.engine)
-
 def create_user(name: str, age: int):
     with DemoSession().get_session() as session:
         try:
@@ -24,8 +21,8 @@ def create_user(name: str, age: int):
         except IntegrityError:
             session.rollback() # Отменяем падение
             print(f"Пользователь {name} уже существует, пропускаем...")
-
-user_1 = create_user('Даня', 19)
-user_2 = create_user('Артём', 16)
-user_3 = create_user('Саня', 16)
+def seed_users():
+        create_user('Даня', 19)
+        create_user('Артём', 16)
+        create_user('Саня', 16)
 

@@ -4,8 +4,13 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
+from data.db_utilities.setup import setup_db
+from data.datamodel.create_demo_db import seed_users
 from data.db_utilities.session import DemoSession
 from data.datamodel.create_demo_db import User
+
+setup_db()
+seed_users()
 
 app = FastAPI()
 
