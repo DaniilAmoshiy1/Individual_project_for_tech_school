@@ -32,8 +32,4 @@ async def index(request: Request):
     with DemoSession.get_session() as session:
         users_list = session.query(User).all()
 
-    return templates.TemplateResponse(
-        request=request,
-        name="index.html",
-        context={"users": users_list}
-    )
+    return templates.TemplateResponse(request=request, name="index.html", context={"users": users_list})
